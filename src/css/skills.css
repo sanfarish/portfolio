@@ -1,0 +1,9 @@
+.skills {
+    background-color: #eeeeee;
+    height: 350px;
+    display: flex;
+}
+
+.skills > img {
+    color: black;
+}
