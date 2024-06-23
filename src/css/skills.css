@@ -1,9 +1,38 @@
 .skills {
-    background-color: #eeeeee;
-    height: 350px;
+    background-color: #cccccc;
+    padding: 50px;
     display: flex;
-}
+    align-items: center;
+    justify-content: center;
 
-.skills > img {
-    color: black;
+    .content {
+        max-width: 750px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+    .skill {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img {
+        width: 75px;
+    }
 }

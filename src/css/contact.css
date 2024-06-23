@@ -1,4 +1,41 @@
 .contact {
-    background-color: #eeeeee;
-    height: 350px;
+    background-color: #cccccc;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content {
+        max-width: 750px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    figcaption {
+        color: black;
+    }
+
+    img {
+        height: 75px;
+    }
 }

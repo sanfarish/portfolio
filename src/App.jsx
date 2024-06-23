@@ -10,14 +10,14 @@ import Contact from './components/Contact';
 const App = () => {
 
 	return (
-		<div className='app'>
+		<>
 			<Header />
 			<Overview />
 			<Skills />
 			<Projects />
 			<Contact />
 			<Footer />
-		</div>
+		</>
 	);
 };
 

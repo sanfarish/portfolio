@@ -15,16 +15,21 @@ const Skills = () => {
 	const width = '100px';
 
 	return (
-		<section className='skills'>
-			<h1>Skills</h1>
-			<Skill img={javascript} caption='Javascript' />
-			<Skill img={nodejs} caption='Node.js' />
-			<Skill img={express} caption='Express.js' />
-			<Skill img={postgresql} caption='PostgreSQL' />
-			<Skill img={react} caption='React.js' />
-			<Skill img={html5} caption='HTML5' />
-			<Skill img={css3} caption='CSS3' />
-			<Skill img={github} caption='Git/Github' />
+		<section className='skills' id='skills'>
+			<div className='content'>
+				<h1>Skills</h1>
+				<p>With JavaScript language as my experience, I tend to work with JavaScript based stack such as Node.js as server environment, Express.js for API framework and React.js as frontend user interface. I also learnt HTML5 as web structure and CSS for styling purposes. I used to work with PostgreSQL for RDBMS (Database). I also have experience with Git and Github.</p>
+				<div className='skill'>
+					<Skill img={javascript} caption='Javascript' />
+					<Skill img={nodejs} caption='Node.js' />
+					<Skill img={express} caption='Express.js' />
+					<Skill img={postgresql} caption='PostgreSQL' />
+					<Skill img={react} caption='React.js' />
+					<Skill img={html5} caption='HTML5' />
+					<Skill img={css3} caption='CSS3' />
+					<Skill img={github} caption='Git/Github' />
+				</div>
+			</div>
 		</section>
 	);
 };
