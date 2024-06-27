@@ -18,7 +18,7 @@ const Skills = () => {
 		<section className='skills' id='skills'>
 			<div className='content'>
 				<h1>Skills</h1>
-				<p>With JavaScript language as my experience, I tend to work with JavaScript based stack such as Node.js as server environment, Express.js for API framework and React.js as frontend user interface. I also learnt HTML5 as web structure and CSS for styling purposes. I used to work with PostgreSQL for RDBMS (Database). I also have experience with Git and Github.</p>
+				<p>With JavaScript language as my experience, I tend to work with JavaScript based stack such as Node.js as server environment, Express.js for API framework and React.js as frontend user interface. I also learnt HTML5 as web structure and CSS for styling purposes. I used to work with PostgreSQL for RDBMS. I also have experience with Git/Github along with CI/CD pipeline and Nginx configuration.</p>
 				<div className='skill'>
 					<Skill img={javascript} caption='Javascript' />
 					<Skill img={nodejs} caption='Node.js' />

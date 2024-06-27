@@ -22,22 +22,22 @@ const Header = () => {
 			</button>
 			<ul style={menu === true ? styleMenu : {}}>
 				<li>
-					<a href="#overview">
+					<a href="#overview" onClick={clickMenu}>
 						<h4>Overview</h4>
 					</a>
 				</li>
 				<li>
-					<a href="#skills">
+					<a href="#skills" onClick={clickMenu}>
 						<h4>Skills</h4>
 					</a>
 				</li>
 				<li>
-					<a href="#projects">
+					<a href="#projects" onClick={clickMenu}>
 						<h4>Projects</h4>
 					</a>
 				</li>
 				<li>
-					<a href="#contact">
+					<a href="#contact" onClick={clickMenu}>
 						<h4>Contact</h4>
 					</a>
 				</li>
