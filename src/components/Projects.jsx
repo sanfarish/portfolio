@@ -16,7 +16,7 @@ const Projects = () => {
 						<p>
 							A responsive web-app to manage personal expenses using React and Node.js within 5 months. Consist of 5 pages with REST API server: login, register, transactions, accounts, categories.
 							<br />
-							<a href="https://www.expensemanager.biz.id">Expense Manager Website</a>
+							<a href="https://expensemanager.farishasan.web.id">Expense Manager Website</a>
 							<br />
 							<a href="https://github.com/sanfarish/expense-manager-app">GitHub Repository</a>
 						</p>
