@@ -1,0 +1,146 @@
+[
+    {
+        "title": "Language",
+        "skill": [
+            {
+                "name": "Javascript",
+                "image": "/skills/javascript-original.svg"
+            }
+        ]
+    },
+    {
+        "title": "Frontend",
+        "skill": [
+            {
+                "name": "React",
+                "image": "/skills/frontends/react-original.svg"
+            },
+            {
+                "name": "React Router",
+                "image": "/skills/frontends/reactrouter-original-wordmark.svg"
+            },
+            {
+                "name": "Vitejs",
+                "image": "/skills/frontends/vitejs-original.svg"
+            },
+            {
+                "name": "Bootstrap",
+                "image": "/skills/frontends/bootstrap-original.svg"
+            },
+            {
+                "name": "Material UI",
+                "image": "/skills/frontends/materialui-original.svg"
+            }
+        ]
+    },
+    {
+        "title": "Backend",
+        "skill": [
+            {
+                "name": "Node.js",
+                "image": "/skills/backends/nodejs-original.svg"
+            },
+            {
+                "name": "Express.js",
+                "image": "/skills/backends/express-original.svg"
+            },
+            {
+                "name": "Sequelize (ORM)",
+                "image": "/skills/backends/sequelize-original.svg"
+            },
+            {
+                "name": "Knexjs (ORM)",
+                "image": "/skills/backends/knexjs-original.svg"
+            },
+            {
+                "name": "Swagger (Docs)",
+                "image": "/skills/backends/swagger-original.svg"
+            }
+        ]
+    },
+    {
+        "title": "Databases",
+        "skill": [
+            {
+                "name": "PostgreSQL",
+                "image": "/skills/databases/postgresql-original-wordmark.svg"
+            },
+            {
+                "name": "MySQL",
+                "image": "/skills/databases/mysql-original-wordmark.svg"
+            }
+        ]
+    },
+    {
+        "title": "Graphics",
+        "skill": [
+            {
+                "name": "Adobe Illustrator",
+                "image": "/skills/media/illustrator-line.svg"
+            },
+            {
+                "name": "Adobe Photoshop",
+                "image": "/skills/media/photoshop-original.svg"
+            }
+        ]
+    },
+    {
+        "title": "Testing & CI/CD",
+        "skill": [
+            {
+                "name": "Jest",
+                "image": "/skills/CI/jest-plain.svg"
+            },
+            {
+                "name": "Vitest",
+                "image": "/skills/CI/vitest-original.svg"
+            },
+            {
+                "name": "Github Actions",
+                "image": "/skills/CI/githubactions-original.svg"
+            }
+        ]
+    },
+    {
+        "title": "Prod. Server",
+        "skill": [
+            {
+                "name": "Ubuntu 20.04",
+                "image": "/skills/servers/ubuntu-original.svg"
+            },
+            {
+                "name": "Nginx",
+                "image": "/skills/servers/nginx-original.svg"
+            },
+            {
+                "name": "Vercel",
+                "image": "/skills/servers/vercel-original-wordmark.svg"
+            },
+            {
+                "name": "Linux",
+                "image": "/skills/servers/linux-original.svg"
+            }
+        ]
+    },
+    {
+        "title": "Project Mgmt.",
+        "skill": [
+            {
+                "name": "Git",
+                "image": "/skills/projects/git-original.svg"
+            },
+            {
+                "name": "Github",
+                "image": "/skills/projects/github-original.svg"
+            },
+            {
+                "name": "Trello",
+                "image": "/skills/projects/trello-original.svg"
+            },
+            {
+                "name": "Notion",
+                "image": "/skills/projects/notion-original.svg"
+            }
+        ]
+    }
+]

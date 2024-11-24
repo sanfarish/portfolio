@@ -3,6 +3,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.js'
 import './App.css'
 import Nav from './components/Nav'
 import Overview from './components/Overview'
+import Skills from './components/Skills'
 
 export default function App() {
 
@@ -11,6 +12,7 @@ export default function App() {
       <Nav />
       <main className='container-lg bg-body-secondary d-flex flex-column align-items-center'>
         <Overview />
+        <Skills />
       </main>
     </div>
   )

@@ -1,9 +1,9 @@
-import profile from "../assets/profile.jpg"
+import profile from "/profile.jpg"
 
 export default function Overview() {
   
   return (
-    <section className="h-100 d-flex align-items-center gap-3 w-75 my-5">
+    <section className="h-100 d-flex align-items-center gap-3 py-5 mx-4 border-bottom border-2 border-black">
       <img src={profile} alt="Faris Hasan Profile" height={250} width={250} style={{ borderRadius: "50%" }} />
       <div className="d-flex flex-column">
         <h1>Faris Hasan</h1>
