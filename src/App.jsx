@@ -9,7 +9,7 @@ import Projects from './components/Projects'
 export default function App() {
 
   return (
-    <div className='vw-100' style={{ backgroundColor: "#909cc2" }}>
+    <div style={{ backgroundColor: "#909cc2" }}>
       <Nav />
       <main className='container-lg bg-body-secondary d-flex flex-column align-items-center'>
         <Overview />
