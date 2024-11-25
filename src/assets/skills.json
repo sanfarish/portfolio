@@ -20,16 +20,16 @@
                 "image": "/skills/frontends/reactrouter-original-wordmark.svg"
             },
             {
-                "name": "Vitejs",
-                "image": "/skills/frontends/vitejs-original.svg"
-            },
-            {
                 "name": "Bootstrap",
                 "image": "/skills/frontends/bootstrap-original.svg"
             },
             {
                 "name": "Material UI",
                 "image": "/skills/frontends/materialui-original.svg"
+            },
+            {
+                "name": "Vitejs",
+                "image": "/skills/frontends/vitejs-original.svg"
             }
         ]
     },
@@ -117,8 +117,8 @@
                 "image": "/skills/servers/vercel-original-wordmark.svg"
             },
             {
-                "name": "Linux",
-                "image": "/skills/servers/linux-original.svg"
+                "name": "Cloudflare",
+                "image": "/skills/servers/cloudflare-original.svg"
             }
         ]
     },
