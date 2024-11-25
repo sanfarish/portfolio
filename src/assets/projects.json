@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Expense Manager",
+        "description": "My first project made in my bootcamp to track daily expenses that consist of 5 pages and a REST API with JWT auth and Cloudinary storage, both frontend & backend deployed to my personal VPS with CI/CD from Github Actions",
+        "techs": "React, React Router, ANT Design, Node+Express, PostgreSQL, Jest, JWT auth, Cloudinary, Nginx",
+        "complete": {
+            "frontend_ui": 4,
+            "rest_api": 3,
+            "api_docs": 2,
+            "front_back_testing": 1,
+            "data_validation": 3,
+            "function": 5
+        },
+        "image": "/projects/expense-manager.png",
+        "link_repo": "https://github.com/sanfarish/expense-manager",
+        "link_deploy": "https://expensemanager.farishasan.web.id"
+    },
+    {
+        "name": "Cafe Point of Sales",
+        "description": "App to process payments and log transactions that consist of [X] pages and a REST API , both frontend & backend deployed to my personal VPS. I learnt a lot about CSS framework here",
+        "techs": "React, Material UI, Node+Express, Swagger, MySQL, Vitest, Nginx",
+        "complete": {
+            "frontend_ui": 4,
+            "rest_api": 4,
+            "api_docs": 3,
+            "front_back_testing": 3,
+            "data_validation": 2,
+            "function": 4
+        },
+        "image": "/projects/cafe-pos.png",
+        "link_repo": "https://github.com/sanfarish/cafe-pos",
+        "link_deploy": "https://cafepos.farishasan.web.id"
+    },
+    {
+        "name": "Todo Memo",
+        "description": "Simple app to record daily task to-do with complete validation and clean code, both all deployed to my personal VPS. My most simple yet most detailed project",
+        "techs": "React, Bootstrap, Node + Express, MySQL, Jest, Swagger, Nginx",
+        "complete": {
+            "frontend_ui": 3,
+            "rest_api": 5,
+            "api_docs": 5,
+            "front_back_testing": 4,
+            "data_validation": 4,
+            "function": 3
+        },
+        "image": "/projects/cafe-pos.png",
+        "link_repo": "https://github.com/sanfarish/todo-memo",
+        "link_deploy": "https://todomemo.farishasan.web.id"
+    }
+]

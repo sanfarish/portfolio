@@ -4,6 +4,7 @@ import './App.css'
 import Nav from './components/Nav'
 import Overview from './components/Overview'
 import Skills from './components/Skills'
+import Projects from './components/Projects'
 
 export default function App() {
 
@@ -13,6 +14,7 @@ export default function App() {
       <main className='container-lg bg-body-secondary d-flex flex-column align-items-center'>
         <Overview />
         <Skills />
+        <Projects />
       </main>
     </div>
   )
