@@ -2,7 +2,7 @@
 export default function Contacts() {
   
   return (
-    <section className="text-center pt-2 mx-4">
+    <section className="text-center pt-2 mx-4" id="contacts" style={{ scrollMarginTop: 65 }}>
       <h1>Contacts</h1>
       <div className="d-flex flex-wrap gap-5 justify-content-center pt-2">
         <a href="#"
