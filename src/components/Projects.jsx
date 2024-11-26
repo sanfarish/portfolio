@@ -7,14 +7,13 @@ export default function Projects() {
     return ratingBase.map(item => item < value ? <img src="/projects/star-solid-true.svg" alt="star true"
       width={18}
       key={item}
-    /> : <img src="/projects/star-solid-false.svg" alt="star false"
-      width={18}
-      key={item}
-    />)
+    /> : <img src="/projects/star-solid-false.svg" alt="star false" width={18} key={item} />)
   }
 
   return (
-    <section className="d-flex flex-column align-items-center pt-2 pb-4 mx-4 border-bottom border-2 border-black">
+    <section className="d-flex flex-column align-items-center pt-2 pb-4 mx-4 border-bottom border-2 border-black"
+      id="projects" style={{ scrollMarginTop: 65 }}
+    >
       <h1>Projects</h1>
       <p>Here are some of my projects so far.</p>
       <div className="d-flex flex-wrap gap-4 justify-content-center">
