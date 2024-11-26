@@ -7,26 +7,34 @@ export default function Nav() {
         <div className="navbar-brand">
           <img src="/favicon.svg" alt="FH Logo" width={40} height={40} className="d-inline-block align-text-top" />
         </div>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#myNavbar"
+          aria-controls="myNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="navbar-collapse collapse" id="navbar">
+        <div className="navbar-collapse collapse" id="myNavbar">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#">Overview</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Skills</a>
+              <a className="nav-link" href="#skills">Skills</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Projects</a>
+              <a className="nav-link" href="#projects">Projects</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Contacts</a>
+              <a className="nav-link" href="#contacts">Contacts</a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="#">Guestbook</a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
