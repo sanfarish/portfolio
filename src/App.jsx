@@ -6,6 +6,7 @@ import Overview from './components/Overview'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contacts from './components/Contacts'
+import Footer from './components/Footer'
 
 export default function App() {
 
@@ -18,6 +19,7 @@ export default function App() {
         <Projects />
         <Contacts />
       </main>
+      <Footer />
     </div>
   )
 }
