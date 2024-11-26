@@ -1,6 +1,7 @@
 [
     {
         "name": "Expense Manager",
+        "type": "Full Stack Project",
         "description": "My first project made in my bootcamp to track daily expenses that consist of 5 pages and a REST API with JWT auth and Cloudinary storage, both frontend & backend deployed to my personal VPS with CI/CD from Github Actions",
         "techs": "React, React Router, ANT Design, Node+Express, PostgreSQL, Jest, JWT auth, Cloudinary, Nginx",
         "complete": {
@@ -17,7 +18,8 @@
     },
     {
         "name": "Cafe Point of Sales",
-        "description": "App to process payments and log transactions that consist of [X] pages and a REST API , both frontend & backend deployed to my personal VPS. I learnt a lot about CSS framework here",
+        "type": "Full Stack Project",
+        "description": "App to process payments and log transactions that consist of 1 page and a REST API , both frontend & backend deployed to my personal VPS. I learnt a lot about UI / CSS framework here",
         "techs": "React, Material UI, Node+Express, Swagger, MySQL, Vitest, Nginx",
         "complete": {
             "frontend_ui": 4,
@@ -33,8 +35,9 @@
     },
     {
         "name": "Todo Memo",
-        "description": "Simple app to record daily task to-do with complete validation and clean code, both all deployed to my personal VPS. My most simple yet most detailed project",
-        "techs": "React, Bootstrap, Node + Express, MySQL, Jest, Swagger, Nginx",
+        "type": "Full Stack Project",
+        "description": "Simple app to record daily task to-do with complete validation and clean code, both all deployed to my personal VPS. My most simple yet most comprehensive project",
+        "techs": "React, Bootstrap, Node+Express, MySQL, Jest, Swagger",
         "complete": {
             "frontend_ui": 3,
             "rest_api": 5,
@@ -43,8 +46,8 @@
             "data_validation": 4,
             "function": 3
         },
-        "image": "/projects/cafe-pos.png",
+        "image": "/projects/todo-memo.png",
         "link_repo": "https://github.com/sanfarish/todo-memo",
-        "link_deploy": "https://todomemo.farishasan.web.id"
+        "link_deploy": ""
     }
 ]

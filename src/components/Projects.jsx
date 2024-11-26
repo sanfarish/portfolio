@@ -24,6 +24,7 @@ export default function Projects() {
 
           <div className="card-body">
             <div className="card-title"><h3>{obj.name}</h3></div>
+            <div className="card-text"><h6>{obj.type}</h6></div>
             <div className="card-text">{obj.description}</div>
           </div>
 
@@ -62,7 +63,7 @@ export default function Projects() {
           
           <div className="card-body flex-grow-0">
             <div className="card-text"><a href={obj.link_repo} className="card-link">GitHub Repository</a></div>
-            <div className="card-text"><a href={obj.link_deploy} className="card-link">Live Website</a></div>
+            {obj.link_deploy && <div className="card-text"><a href={obj.link_deploy} className="card-link">Live Website</a></div>}
           </div>
         </div>)}
       </div>
