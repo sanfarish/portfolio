@@ -1,8 +1,8 @@
 {
-  "name": "faris-hasan-portfolio",
+  "name": "forntend-fh-portfolio",
   "private": true,
-  "version": "2.0.0",
-  "description": "Frontend of Faris Hasan's portfolio",
+  "version": "3.0.0",
+  "description": "Frontend of Faris Hasan's Portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -15,9 +15,10 @@
     "url": "git+https://github.com/sanfarish/portfolio.git"
   },
   "keywords": [
-    "portfolio"
+    "portfolio",
+    "frontend"
   ],
-  "author": "Faris Hasan",
+  "author": "Faris Hasan <farisfalah@gmail.com> (https://farishasan.web.id/)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sanfarish/portfolio/issues"
