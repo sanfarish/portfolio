@@ -1,46 +1,45 @@
 import { useEffect, useState } from "react"
-import visitorAPI from "../apis/visitorAPI"
+import visitorsAPI from "../apis/visitorsAPI"
 
 export default function Footer() {
   const [visitors, setVisitors] = useState(0)
-  
-  function setNewKey() {
-    const newKey = crypto.randomUUID()
-    localStorage.setItem("farishasan_visit", newKey)
-    visitorAPI({
-      method:"post",
-      url: "/visitors",
-      body: { visitor: newKey },
-      config: { headers: { Authorization: `Bearer ${import.meta.env.VITE_SECRET_TOKEN}` } }
-    }).finally(() => {
-      visitorAPI({ method:"get", url: "/visitors/monthly" })
-      .then(data => setVisitors(data))
-    })
-  }
 
   useEffect(() => {
-    
-    function visitCheck() {
-      const visitKey = localStorage.getItem("farishasan_visit")
-      if (!visitKey) {
-        setNewKey()
-        visitorAPI({ method:"get", url: "/visitors/monthly" })
-        .then(data => setVisitors(data))
-      } else {
-        visitorAPI({ method:"get", url: `/visitors/${visitKey}` })
-        .catch(() => {
-          console.clear()
-          setNewKey()
-        })
-        .finally(() => {
-          visitorAPI({ method:"get", url: "/visitors/monthly" })
-          .then(data => setVisitors(data))
-        })
+
+    async function postVisitor() {
+      const newKey = crypto.randomUUID()
+      const res = await visitorsAPI({ method: "post", url: "/visitors", body: { visitor: newKey },
+        config: { headers: { Authorization: `Bearer ${import.meta.env.VITE_SECRET_TOKEN}` } }
+      })
+      if (res.status === 201) {
+        localStorage.setItem("farishasan_visit", res.data)
       }
     }
 
+    async function getVisitors() {
+      const data = await visitorsAPI({ method: "get", url: "/visitors/monthly" })
+      if (data.status === 200) {
+        setVisitors(data.data)
+      }
+    }
 
-    visitCheck()
+    async function visitCount() {
+      const storedKey = localStorage.getItem("farishasan_visit")
+      if (!storedKey) {
+        postVisitor()
+        getVisitors()
+      } else {
+        const res = await visitorsAPI({ method: "get", url: `/visitors/${storedKey}` })
+        if (res.status !== 200) {
+          postVisitor()
+          getVisitors()
+        } else {
+          getVisitors()
+        }
+      }
+    }
+    
+    visitCount()
   }, [])
   
   return (
