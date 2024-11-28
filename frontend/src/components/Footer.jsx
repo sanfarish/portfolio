@@ -45,11 +45,11 @@ export default function Footer() {
   return (
     <footer className="text-white p-3" style={{ backgroundColor: "#084887" }} data-bs-theme="dark">
         <div className="d-flex flex-wrap align-items-center py-2 border-top border-white">
-            <p className="col-12 col-sm-5 mb-0">© {new Date().getFullYear()} Faris Hasan</p>
+            <p className="col-12 col-sm-5 text-end text-sm-start mb-0">© {new Date().getFullYear()} Faris Hasan</p>
             <div className="d-none d-sm-block col-sm-2 mb-0 text-end text-sm-center">
                 <img src="/favicon.svg" alt="FH Logo" width={40} height={40} />
             </div>
-            <div className="col-12 col-sm-5 text-sm-end mb-0">
+            <div className="col-12 col-sm-5 text-end mb-0">
               <p className="mb-0">Made with React & Bootstrap</p>
               <p className="mb-0">Monthly visitors: <button className="btn btn-dark" style={{ padding: "0 8px" }}>
                 {visitors}
