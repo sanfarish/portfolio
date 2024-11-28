@@ -26,15 +26,15 @@ export default function Footer() {
     async function visitCount() {
       const storedKey = localStorage.getItem("farishasan_visit")
       if (!storedKey) {
-        postVisitor()
-        getVisitors()
+        await postVisitor()
+        await getVisitors()
       } else {
         const res = await visitorsAPI({ method: "get", url: `/visitors/${storedKey}` })
         if (res.status !== 200) {
-          postVisitor()
-          getVisitors()
+          await postVisitor()
+          await getVisitors()
         } else {
-          getVisitors()
+          await getVisitors()
         }
       }
     }
