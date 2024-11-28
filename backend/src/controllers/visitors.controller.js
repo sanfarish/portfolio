@@ -30,7 +30,7 @@ const getWeekly = asyncWrapper(async (req, res) => {
 const getByID = asyncWrapper(async (req, res) => {
 	const data = await models.visitors.findOne({ where: { farishasan_visit: req.params.id } });
 	if (!data) throw Object.assign(new Error(), { errorCode: 404 });
-	const expiredTime = 24 * 1;
+	const expiredTime = 24 * process.env.EXPIRED_TIME;
 	const diff = diffHourly(data.createdAt)
 	if (diff > expiredTime) throw Object.assign(new Error("expired"), { errorCode: 400 });
 	res.status(200).send(data.farishasan_visit);
