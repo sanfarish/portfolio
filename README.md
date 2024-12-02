@@ -1,11 +1,13 @@
 # Faris Hasan's Portfolio v3
-* See my portfolio: https://farishasan.web.id
+* A repository for my portfolio website
+* Check out my portfolio: https://farishasan.web.id
 ## Tech stack used
 ### Frontend
-* React
+* React + Vite
 * Bootstrap
-### Backend
+### Backend (for visitor count)
 * Node + Express
+* Sequelize
 * PostgreSQL
 ### Deployment Server
 * Ubuntu 20.04
