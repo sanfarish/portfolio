@@ -1,15 +1,17 @@
 const express = require("express");
-const app = express();
+const compression = require("compression");
 const cors = require("cors");
-const logger = require("morgan");
-
-const api = require("./routes");
-
+const helmet = require("helmet");
+const logger = require('./middlewares/logger');
 const { error, notFound } = require("./middlewares/endHandler");
+const api = require("./routes");
+const app = express();
 
-app.use(logger("dev"));
+app.use(logger);
+app.use(helmet());
+app.use(cors({ origin: process.env.CORS_ORIGIN }));
+app.use(compression());
 app.use(express.json());
-app.use(cors());
 
 app.use("/api", api);
 
