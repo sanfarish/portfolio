@@ -14,8 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Visitor.init({
-    remote: DataTypes.STRING,
-    visit: DataTypes.UUID
+    remote: {
+      type: DataTypes.STRING(64),
+      allowNull: false
+    },
+    visit: {
+      type: DataTypes.UUID,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Visitor',

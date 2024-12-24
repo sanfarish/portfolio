@@ -7,25 +7,25 @@ module.exports = {
       {
         remote: '1234-5-6-7890',
         visit: crypto.randomUUID(),
-        created_at: new Date('2024-01-01'),
-        updated_at: new Date('2024-01-01')
+        created_at: new Date(new Date().getTime() - 31104000000), // < 1 year
+        updated_at: new Date(new Date().getTime() - 31104000000)
       },
       {
         remote: '123-45-67-890',
         visit: crypto.randomUUID(),
-        created_at: new Date('2024-12-01'),
-        updated_at: new Date('2024-12-01')
+        created_at: new Date(new Date().getTime() - 2419200000), // < 1 month
+        updated_at: new Date(new Date().getTime() - 2419200000)
       },
       {
         remote: '12-345-678-90',
         visit: crypto.randomUUID(),
-        created_at: new Date('2024-12-23'),
-        updated_at: new Date('2024-12-23')
+        created_at: new Date(new Date().getTime() - 518400000), // < 1 week
+        updated_at: new Date(new Date().getTime() - 518400000)
       },
       {
         remote: '1-2345-6789-0',
         visit: crypto.randomUUID(),
-        created_at: new Date(),
+        created_at: new Date(), // today
         updated_at: new Date()
       }
     ], {});
