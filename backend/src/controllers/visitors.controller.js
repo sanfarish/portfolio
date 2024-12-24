@@ -1,5 +1,6 @@
 const { Visitor } = require("../db/models");
 const asyncWrapper = require("../middlewares/asyncWrapper");
+const createError = require("../utils/createError");
 const diffHourly = require("../utils/diffHourly");
 
 const getAll = asyncWrapper(async (req, res) => {
@@ -29,21 +30,31 @@ const getWeekly = asyncWrapper(async (req, res) => {
 
 const getByID = asyncWrapper(async (req, res) => {
 	const data = await Visitor.findOne({ where: { farishasan_visit: req.params.id } });
-	if (!data) throw Object.assign(new Error(), { errorCode: 404 });
+	if (!data) {
+		throw createError('Not found', 404)
+	};
 	const expiredTime = 24 * process.env.EXPIRED_TIME;
 	const diff = diffHourly(data.createdAt)
-	if (diff > expiredTime) throw Object.assign(new Error("expired"), { errorCode: 400 });
+	if (diff > expiredTime) {
+		throw createError('Expired', 400)
+	};
 	res.status(200).send(data.farishasan_visit);
 });
 
 const post = asyncWrapper(async (req, res) => {
-	if (!req.body.visitor) throw Object.assign(new Error("invalid request"), { errorCode: 400 });
+	if (!req.body.visitor) {
+		throw createError('Invalid request', 400)
+	};
 
 	const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
-	if (!uuidRegex.test(req.body.visitor)) throw Object.assign(new Error("invalid request"), { errorCode: 400 });
+	if (!uuidRegex.test(req.body.visitor)) {
+		throw createError('Invalid request', 400)
+	};
 
 	const checker = await Visitor.findOne({ where: { farishasan_visit: req.body.visitor } });
-	if (checker) throw Object.assign(new Error("duplicate request"), { errorCode: 400 });
+	if (checker) {
+		throw createError('Already exists', 400)
+	};
 
 	const data = await Visitor.create( { farishasan_visit: req.body.visitor } );
 	res.status(201).send(data.farishasan_visit);
