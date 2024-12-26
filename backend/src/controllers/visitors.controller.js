@@ -5,7 +5,7 @@ const diffHourly = require("../utils/diffHourly");
 
 const getAll = asyncWrapper(async (req, res) => {
 	const data = await Visitor.findAll();
-	res.status(200).send(data.length.toString());
+	res.status(200).json(data);
 });
 
 const getMonthly = asyncWrapper(async (req, res) => {
@@ -18,18 +18,8 @@ const getMonthly = asyncWrapper(async (req, res) => {
 	res.status(200).send(filteredData.length.toString());
 });
 
-const getWeekly = asyncWrapper(async (req, res) => {
-	const data = await Visitor.findAll();
-	const expiredTime = 24 * 7;
-	const filteredData = data.filter(item => {
-		const diff = diffHourly(item.createdAt);
-		if (expiredTime > diff) return item.id;
-	});
-	res.status(200).send(filteredData.length.toString());
-});
-
 const getByID = asyncWrapper(async (req, res) => {
-	const data = await Visitor.findOne({ where: { farishasan_visit: req.params.id } });
+	const data = await Visitor.findOne({ where: { visit: req.params.id } });
 	if (!data) {
 		throw createError('Not found', 404)
 	};
@@ -38,26 +28,26 @@ const getByID = asyncWrapper(async (req, res) => {
 	if (diff > expiredTime) {
 		throw createError('Expired', 400)
 	};
-	res.status(200).send(data.farishasan_visit);
+	res.status(200).send(data.visit);
 });
 
 const post = asyncWrapper(async (req, res) => {
-	if (!req.body.visitor) {
+	if (!req.body.visit) {
 		throw createError('Invalid request', 400)
 	};
 
 	const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
-	if (!uuidRegex.test(req.body.visitor)) {
+	if (!uuidRegex.test(req.body.visit)) {
 		throw createError('Invalid request', 400)
 	};
 
-	const checker = await Visitor.findOne({ where: { farishasan_visit: req.body.visitor } });
+	const checker = await Visitor.findOne({ where: { visit: req.body.visit } });
 	if (checker) {
 		throw createError('Already exists', 400)
 	};
 
-	const data = await Visitor.create( { farishasan_visit: req.body.visitor } );
-	res.status(201).send(data.farishasan_visit);
+	const data = await Visitor.create( { visit: req.body.visit } );
+	res.status(201).send(data.visit);
 });
 
-module.exports = { getAll, getMonthly, getWeekly, getByID, post };
+module.exports = { getAll, getMonthly, getByID, post };

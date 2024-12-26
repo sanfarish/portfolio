@@ -6,8 +6,14 @@ module.exports = (req, res, next) => {
 		throw createError('Unauthorized', 401);
 	};
 	const token =  bearerToken.split(' ')[1];
-	if (token !== process.env.SECRET_TOKEN) {
-		throw createError('Unauthorized', 401);
-	};
+	if (req.originalUrl === '/api/v1/visitors') {
+		if (token !== process.env.ADMIN_TOKEN) {
+			throw createError('Unauthorized', 401);
+		};
+	} else {
+		if (token !== process.env.POST_TOKEN) {
+			throw createError('Unauthorized', 401);
+		};
+	}
     next()
 }
