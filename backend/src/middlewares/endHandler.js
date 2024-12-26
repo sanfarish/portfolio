@@ -1,8 +1,8 @@
 const path = require("path");
 
 const error = (err, req, res, next) => {
-	if (err && err.statusCode !== 404) {
-		console.error((err.code || 500) + ' error: ' + err.message)
+	if (err) {
+		console.error((err.statusCode || 500) + ' error: ' + err.message)
 		return res.status(err.statusCode || 500).json({ error: err.message, });
 	}
 	next();
