@@ -46,7 +46,9 @@ const post = asyncWrapper(async (req, res) => {
 		throw createError('Already exists', 400)
 	};
 
-	const data = await Visitor.create( { visit: req.body.visit } );
+	const remote = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+	const visit = req.body.visit
+	const data = await Visitor.create({ remote, visit });
 	res.status(201).send(data.visit);
 });
 
