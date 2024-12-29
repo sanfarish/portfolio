@@ -25,32 +25,32 @@ const getByID = asyncWrapper(async (req, res) => {
   const data = await Visitor.findOne({ where: { visit: req.params.id } })
   if (!data) {
     throw createError('Not found', 404)
-  };
+  }
   const expiredTime = 24 * process.env.EXPIRED_TIME
   const diff = diffHourly(data.createdAt)
   if (diff > expiredTime) {
     throw createError('Expired', 400)
-  };
+  }
   res.status(200).send(data.visit)
 })
 
 const post = asyncWrapper(async (req, res) => {
-  if (!req.body.visit) {
-    throw createError('Invalid request', 400)
-  };
-
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
-  if (!uuidRegex.test(req.body.visit)) {
-    throw createError('Invalid request', 400)
-  };
-
-  const checker = await Visitor.findOne({ where: { visit: req.body.visit } })
-  if (checker) {
-    throw createError('Already exists', 400)
-  };
-
   const remote = req.headers['x-forwarded-for'] || req.socket.remoteAddress
   const visit = req.body.visit
+  if (!visit) {
+    throw createError('Invalid request', 400)
+  }
+
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
+  if (!uuidRegex.test(visit)) {
+    throw createError('Invalid request', 400)
+  }
+
+  const checker = await Visitor.findOne({ where: { visit } })
+  if (checker) {
+    throw createError('Already exists', 400)
+  }
+
   const data = await Visitor.create({ remote, visit })
   res.status(201).send(data.visit)
 })

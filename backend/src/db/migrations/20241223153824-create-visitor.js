@@ -10,7 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       remote: {
-        type: Sequelize.STRING(128),
+        type: Sequelize.STRING(64),
         allowNull: false
       },
       visit: {
