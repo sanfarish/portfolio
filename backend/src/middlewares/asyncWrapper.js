@@ -4,6 +4,6 @@ module.exports = (controller) => {
       await controller(req, res, next)
     } catch (error) {
       next(error)
-    };
+    }
   }
 }

@@ -4,6 +4,10 @@ const createError = require('../utils/createError')
 const diffHourly = require('../utils/diffHourly')
 
 const getAll = asyncWrapper(async (req, res) => {
+  const queries = req.query
+  if (!queries[process.env.ADMIN_QUERY] || queries[process.env.ADMIN_QUERY] !== process.env.ADMIN_VALUE) {
+    throw createError('Unauthorized', 401)
+  }
   const data = await Visitor.findAll()
   res.status(200).json(data)
 })
@@ -22,6 +26,11 @@ const getMonthly = asyncWrapper(async (req, res) => {
 })
 
 const getByID = asyncWrapper(async (req, res) => {
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
+  if (!uuidRegex.test(req.params.id)) {
+    throw createError('Invalid request', 400)
+  }
+
   const data = await Visitor.findOne({ where: { visit: req.params.id } })
   if (!data) {
     throw createError('Not found', 404)
@@ -41,7 +50,7 @@ const post = asyncWrapper(async (req, res) => {
     throw createError('Invalid request', 400)
   }
 
-  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
   if (!uuidRegex.test(visit)) {
     throw createError('Invalid request', 400)
   }
