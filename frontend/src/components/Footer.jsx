@@ -8,7 +8,7 @@ export default function Footer() {
 
     async function postVisitor() {
       const newKey = crypto.randomUUID()
-      const res = await visitorsAPI({ method: "post", url: "/visitors", body: { visitor: newKey },
+      const res = await visitorsAPI({ method: "post", url: "/visitors", body: { visit: newKey },
         config: { headers: { Authorization: `Bearer ${import.meta.env.VITE_SECRET_TOKEN}` } }
       })
       if (res.status === 201) {
