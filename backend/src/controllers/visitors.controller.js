@@ -1,15 +1,23 @@
 const { Visitor } = require('../db/models')
 const asyncWrapper = require('../middlewares/asyncWrapper')
 const createError = require('../utils/createError')
+const dayjs = require('../utils/timezone')
 const diffHourly = require('../utils/diffHourly')
 
 const getAll = asyncWrapper(async (req, res) => {
   const queries = req.query
-  if (!queries[process.env.ADMIN_QUERY] || queries[process.env.ADMIN_QUERY] !== process.env.ADMIN_VALUE) {
+  if (queries[process.env.ADMIN_QUERY] && queries[process.env.ADMIN_QUERY] === process.env.ADMIN_VALUE) {
+    const raw = await Visitor.findAll()
+    const build = JSON.parse(JSON.stringify(raw))
+    const data = build.map(item => {
+      item.createdAt = dayjs(item.createdAt).tz('Asia/Jakarta').format('DD/MM/YYYY-HH:mm:ss.SSS')
+      item.updatedAt = dayjs(item.updatedAt).tz('Asia/Jakarta').format('DD/MM/YYYY-HH:mm:ss.SSS')
+      return item
+    })
+    res.status(200).json(data)
+  } else {
     throw createError('Unauthorized', 401)
   }
-  const data = await Visitor.findAll()
-  res.status(200).json(data)
 })
 
 const getMonthly = asyncWrapper(async (req, res) => {
