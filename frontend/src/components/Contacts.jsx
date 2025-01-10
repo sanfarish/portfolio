@@ -13,16 +13,22 @@ export default function Contacts() {
             <figcaption className="pt-2"><h4>E-Mail</h4></figcaption>
           </figure>
         </a>
-        <a href="https://www.linkedin.com/in/sanfarish/"
+        <a
+          href="https://www.linkedin.com/in/sanfarish/"
           className="link-dark link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+          target="_blank"
+          rel="noreferrer noopener"
         >
           <figure>
             <img src="/contacts/linkedin-original.svg" alt="Linkedin" height={100} />
             <figcaption className="pt-2"><h4>Linkedin</h4></figcaption>
           </figure>
         </a>
-        <a href="https://github.com/sanfarish"
+        <a
+          href="https://github.com/sanfarish"
           className="link-dark link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+          target="_blank"
+          rel="noreferrer noopener"
         >
           <figure>
             <img src="/contacts/github-original.svg" alt="GitHub" height={100} />

@@ -61,8 +61,26 @@ export default function Projects() {
           </div>
           
           <div className="card-body flex-grow-0">
-            <div className="card-text"><a href={obj.link_repo} className="card-link">GitHub Repository</a></div>
-            {obj.link_deploy && <div className="card-text"><a href={obj.link_deploy} className="card-link">Live Website</a></div>}
+            <div className="card-text">
+              <a
+                href={obj.link_repo}
+                className="card-link"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                GitHub Repository
+              </a>
+            </div>
+            {obj.link_deploy && <div className="card-text">
+              <a
+                href={obj.link_deploy}
+                className="card-link"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Live Website
+              </a>
+            </div>}
           </div>
         </div>)}
       </div>

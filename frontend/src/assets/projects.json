@@ -34,7 +34,7 @@
         "link_deploy": "https://cafepos.farishasan.web.id"
     },
     {
-        "name": "Todo Memo",
+        "name": "Task Memo",
         "type": "Full Stack Project",
         "description": "Simple app to record daily task to-do with complete validation and clean code, both all deployed to my personal VPS. My most simple yet most comprehensive project",
         "techs": "React, Bootstrap, Node+Express, MySQL, Jest, Swagger",
@@ -47,7 +47,7 @@
             "function": 3
         },
         "image": "/projects/todo-memo.png",
-        "link_repo": "https://github.com/sanfarish/todo-memo",
+        "link_repo": "https://github.com/sanfarish/task-memo",
         "link_deploy": ""
     }
 ]

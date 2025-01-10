@@ -21,16 +21,16 @@ const getAll = asyncWrapper(async (req, res) => {
 })
 
 const getMonthly = asyncWrapper(async (req, res) => {
-  const data = await Visitor.findAll()
+  const raw = await Visitor.findAll()
   const expiredTime = 24 * 30
-  const filteredData = data.filter(item => {
+  const data = raw.filter(item => {
     const diff = diffHourly(item.createdAt)
     if (expiredTime < diff) {
       return null
     }
     return item.id
   })
-  res.status(200).send(filteredData.length.toString())
+  res.status(200).send(data.length.toString())
 })
 
 const getByID = asyncWrapper(async (req, res) => {
