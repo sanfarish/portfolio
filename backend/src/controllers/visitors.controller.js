@@ -14,10 +14,9 @@ const getAll = asyncWrapper(async (req, res) => {
       item.updatedAt = dayjs(item.updatedAt).tz('Asia/Jakarta').format('DD/MM/YYYY-HH:mm:ss.SSS')
       return item
     })
-    res.status(200).json(data)
-  } else {
-    throw createError('Unauthorized', 401)
+    return res.status(200).json(data)
   }
+  throw createError('Unauthorized', 401)
 })
 
 const getMonthly = asyncWrapper(async (req, res) => {
@@ -30,7 +29,7 @@ const getMonthly = asyncWrapper(async (req, res) => {
     }
     return item.id
   })
-  res.status(200).send(data.length.toString())
+  return res.status(200).send(data.length.toString())
 })
 
 const getByID = asyncWrapper(async (req, res) => {
@@ -48,7 +47,7 @@ const getByID = asyncWrapper(async (req, res) => {
   if (diff > expiredTime) {
     throw createError('Expired', 400)
   }
-  res.status(200).send(data.visit)
+  return res.status(200).send(data.visit)
 })
 
 const post = asyncWrapper(async (req, res) => {
@@ -69,7 +68,7 @@ const post = asyncWrapper(async (req, res) => {
   }
 
   const data = await Visitor.create({ remote, visit })
-  res.status(201).send(data.visit)
+  return res.status(201).send(data.visit)
 })
 
 module.exports = { getAll, getMonthly, getByID, post }

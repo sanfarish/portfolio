@@ -7,7 +7,7 @@ const error = (err, req, res, next) => {
 }
 
 const notFound = (req, res) => {
-  res.status(404).send('Not found')
+  return res.status(404).send('Not found')
 }
 
 module.exports = { error, notFound }
